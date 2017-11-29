@@ -106,6 +106,59 @@
           "href": "http://api.tvmaze.com/episodes/406494"
         }
       }
+    },
+    {
+      "id": 528,
+      "url": "http://www.tvmaze.com/shows/528/the-flash",
+      "name": "The Flash",
+      "type": "Scripted",
+      "language": "English",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Science-Fiction"
+      ],
+      "status": "Ended",
+      "runtime": 60,
+      "premiered": "1990-09-20",
+      "officialSite": null,
+      "schedule": {
+        "time": "20:30",
+        "days": []
+      },
+      "rating": {
+        "average": 8.6
+      },
+      "weight": 80,
+      "network": {
+        "id": 2,
+        "name": "CBS",
+        "country": {
+          "name": "United States",
+          "code": "US",
+          "timezone": "America/New_York"
+        }
+      },
+      "webChannel": null,
+      "externals": {
+        "tvrage": 5781,
+        "thetvdb": 78650,
+        "imdb": "tt0098798"
+      },
+      "image": {
+        "medium": "http://static.tvmaze.com/uploads/images/medium_portrait/4/11360.jpg",
+        "original": "http://static.tvmaze.com/uploads/images/original_untouched/4/11360.jpg"
+      },
+      "summary": "<p>The Flash is Barry Allen, a police scientist, who was working one night during a terrible thunder storm when a bolt of lightning crashes through the lab window, electrocuting him. Barry survives and soon learns that he is now able to move at almost incomprehensible speed.</p>",
+      "updated": 1509496066,
+      "_links": {
+        "self": {
+          "href": "http://api.tvmaze.com/shows/528"
+        },
+        "previousepisode": {
+          "href": "http://api.tvmaze.com/episodes/47947"
+        }
+      }
     }
   ]
 }

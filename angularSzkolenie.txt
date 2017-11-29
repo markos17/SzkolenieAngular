@@ -148,6 +148,7 @@ elvis operator
 
 ChangeDetectionStrategy
 
+Resolver
 
 
 

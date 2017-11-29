@@ -12,6 +12,12 @@ import { ShowDetails } from '../tv.models';
 export class ShowDetailsComponent implements OnInit {
 show: ShowDetails;
 
+constructor(private route: ActivatedRoute) {
+  // this.route.data.subscribe(({show}) => this.show = show);
+  this.show = this.route.snapshot.data.show;
+}
+
+/*
   constructor(private route: ActivatedRoute,
               private tv: TvMazeService) {
     const {id} = this.route.snapshot.params as ShowDetailsParams; // destructering
@@ -21,7 +27,7 @@ show: ShowDetails;
     this.tv.getShow(id)
     .subscribe(show => this.show = show);
    }
-
+*/
   ngOnInit() {
   }
 
