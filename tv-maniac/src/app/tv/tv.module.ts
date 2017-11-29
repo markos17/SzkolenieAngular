@@ -6,18 +6,21 @@ import { PosterComponent } from './poster/poster.component';
 import { TvMazeService } from './tv-maze.service';
 import { FormsModule } from '@angular/forms';
 import { BookmarksModule } from '../bookmarks/bookmarks.module';
+import { ShowDetailsComponent } from './show-details/show-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     HttpClientModule,
     FormsModule,
+    RouterModule,
     BookmarksModule
   ],
   providers: [
     TvMazeService,
 
   ],
-  declarations: [SearchComponent, PosterComponent]
+  declarations: [SearchComponent, PosterComponent, ShowDetailsComponent]
 })
 export class TvModule { }

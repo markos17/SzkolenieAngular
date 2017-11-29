@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges } from '@angular/core';
 import { Show } from '../tv.models';
 import {get} from 'lodash';
 
@@ -9,7 +9,7 @@ import {get} from 'lodash';
   styleUrls: ['./poster.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class PosterComponent implements OnInit {
+export class PosterComponent implements OnChanges {
   @Input() show: Show;
   @Input() size = 'lg';
   posterUrl: string;
@@ -19,7 +19,7 @@ export class PosterComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnChanges() {
       const sizesDict = {
         lg: 'original',
         md: 'medium'

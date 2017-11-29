@@ -141,5 +141,13 @@ npm run backend
 localhost:3000
 http://localhost:3000/posts
 
+elvis operator
+{{show?.name}}
+
+<ng-container>
+
+
+
+
 	 
  
