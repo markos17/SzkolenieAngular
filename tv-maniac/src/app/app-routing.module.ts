@@ -6,6 +6,7 @@ import { Page404Component } from './page404/page404.component';
 import { SearchComponent } from './tv/search/search.component';
 import { ShowDetailsComponent } from './tv/show-details/show-details.component';
 import { ShowDetailsResolver } from './tv/show-details/show-details.resolver';
+import { LoggedInGuard } from './guards/logged-in.guard';
 
 export interface ShowDetailsParams {
   id: string;
@@ -21,13 +22,14 @@ const routes: Routes = [
     resolve: {
       show: ShowDetailsResolver
     }
+    , canActivate: [LoggedInGuard]
   },
   {path: '**', component: Page404Component}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {useHash: false})],
-  providers: [ShowDetailsResolver],
+  providers: [ShowDetailsResolver, LoggedInGuard],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

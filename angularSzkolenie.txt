@@ -129,6 +129,9 @@ RxJS
 	 zwraca tablicę w F12
 	 
 ----------DAY3---------
+DESTRUCTIN 
+
+EMMET https://docs.emmet.io/cheat-sheet/
 
 COnsole F12
 $0
@@ -150,7 +153,8 @@ ChangeDetectionStrategy
 
 Resolver
 
+Guard -> ng g g guards/logged-in
 
-
-	 
+lint -> warningi	 
+ /* eslint-dusable */ lub /* tslint:disable */
  
