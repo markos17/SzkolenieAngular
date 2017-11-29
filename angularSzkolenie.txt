@@ -135,7 +135,11 @@ $0
 $0.value
 ostatni kliknety
 
-	 
-	 
+npm i -D json-server 
+npm run backend
+
+localhost:3000
+http://localhost:3000/posts
+
 	 
  
