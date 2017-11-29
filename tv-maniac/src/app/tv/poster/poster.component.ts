@@ -1,13 +1,15 @@
-import { Component, OnInit, Input, ViewEncapsulation, OnChanges } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, OnChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Show } from '../tv.models';
 import {get} from 'lodash';
+
 
 
 @Component({
   selector: 'tm-poster',
   templateUrl: './poster.component.html',
   styleUrls: ['./poster.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PosterComponent implements OnChanges {
   @Input() show: Show;
@@ -19,7 +21,9 @@ export class PosterComponent implements OnChanges {
 
   }
 
-  ngOnChanges() {
+  ngOnChanges(data) {
+    console.log(data);
+
       const sizesDict = {
         lg: 'original',
         md: 'medium'

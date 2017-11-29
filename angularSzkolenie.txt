@@ -146,6 +146,8 @@ elvis operator
 
 <ng-container>
 
+ChangeDetectionStrategy
+
 
 
 

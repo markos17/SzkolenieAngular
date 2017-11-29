@@ -2,6 +2,27 @@
   <tm-poster class="column is-3" [show]="show" size="lg"></tm-poster>
   <div class="column">
     <h1 class="title">{{show?.name}}</h1>
-    <section>{{show?.summary}}</section>
-  </div>
+    <section [innerHTML]="show?.summary"></section>
+
+
+
+
+    <table class="table">
+      <thead>
+          <tr>
+            <th>Episode nr</th>
+            <th>Name</th>
+            <th>Air time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let episode of show?._embedded.episodes">
+            <td>{{episode.season}}</td>
+            <td>{{episode.name}}</td>
+            <td>{{episode.airtime}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+</div>
 </div>
