@@ -1,0 +1,141 @@
+https://bitbucket.org/tomsu/
+
+INSTALKA
+webpack
+
+npm alias default 8
+nvm use 8
+
+npm init -y  -> domyslne odpowiedzi
+npm install nazwa --save -> npm i nazwa -S
+npm install nazwa --save-dev -> npm i nazwa -D
+
+UPDATE
+"lodash": "^4.17.4" 
+^ drugi i trzeci poziom
+~ tylko ostatni poziom 
+* wszystkie
+
+npm i -D webpack
+
+npm link - budowanie wlasnych modulow, do ew. sprawdzenia w necie
+
+scope closures, object prototypes, asynchronity, functional programming
+
+ksiazki
+https://github.com/getify/You-Dont-Know-JS
+nodeschool - functional javascript, prostsze: core js, scope
+
+karma - test runner
+jasmine - angular test framework
+
+xdescribe('calculator', function) {
+x - black list, f-white list
+
+
+npm i -g karma-cli
+npm i -D karma
+karma init
+
+ karma.conf.js ->  reporters: ['progress'],  
+ mozna dodac Instabult - zapisywanie rezultatow testow np do html
+ 
+ 
+ 
+expect([]).toEqual([]);
+expect([]).toBe([]);
+ 
+ es6
+https://ponyfoo.com/articles/es6
+
+typescript ebook
+https://www.gitbook.com/book/basarat/typescript/details
+
+---DAY2
+
+Yeoman - do przenoszenia konfiguracji
+(fountainjs)
+
+nowy projekt:
+ng new tv-maniac -p tm --routing --style scss
+
+tslint -> sprawdzanie kodu, spacje, nawiasy
+
+dodatek:
+angular prodctivity
+
+ 
+ ng g c home
+ 
+ angular-cli.json -> mozna wylaczyc domyslne tworznie niektorych rzeczy (np. testow, albo sli) podczas generowania nowych obiektow
+    "component": {
+      "spec": false
+    }
+  }
+  
+debugging
+F12
+ctrl+p
+
+https://bitbucket.org/tomsu/
+
+  
+ bulma - alternatywa dla bootstrap css
+ 
+ plik styles.scss : dodać
+ @import "~bulma";
+
+ 
+  <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" class="navbar-item is-tab">Home</a>
+        <a routerLink="/tv" routerLinkActive="is-active"  class="navbar-item is-tab">TV shows</a>
+        <a routerLink="/contact" routerLinkActive="is-active"  class="navbar-item is-tab">Contact</a>
+		
+		
+const routes: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'contact', component: ContactComponent},
+   {path: 'users/add', component: ContactComponent},  
+   {path: 'users/:id', component: ContactComponent},
+  {path: '**', component: Page404Component}
+];
+ zamiast Component, mozna dac redirectTo: 'tv'
+ 
+ jezeli podstrona ma byc na angularze
+ dodajemy do index.html
+ <base href = "/admin">
+ 
+ ng g m tv -> nowy moduł *.ts
+ 
+ w pliku html:
+ EMMET
+abc.item.active#main i TAB
+
+.columns>.column.is-3+.column
+
+SERVICES
+logika binzsowa, api zewnetrzne http
+
+promise - kriskowal q 
+gdy czekamy na odpowiedz asynchronity
+promise vs callback - pytanie na rozmowie
+
+https://api.tvmaze.com/search/shows?q=flash
+
+RxJS
+
+
+    http.get<ShowResponse[]>(url) // fetch(url)
+     // .subscribe(r => console.table(r));
+	 zwraca tablicę w F12
+	 
+----------DAY3---------
+
+COnsole F12
+$0
+$0.value
+ostatni kliknety
+
+	 
+	 
+	 
+ 

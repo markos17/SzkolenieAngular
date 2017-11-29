@@ -1,0 +1,27 @@
+<div class="columns">
+  <div class="column is-3">
+    <h2 clas="subtitle">Bookmarks</h2>
+  </div>
+
+  <div class="column">
+    <h2 clas="subtitle">Find shows</h2>
+    <form class="field has-addons">
+      <div class="contol">
+        <!-- <input #queryRef type="text" class="input"> -->
+        <input [(ngModel)]="query" name="query" type="search" class="input">
+      </div>
+      <div class="control">
+        <!-- <button class="button is-primary" (click)="search(queryRef.value)">Search</button> -->
+        <button class="button is-primary" (click)="search(query)">Search</button>
+      </div>
+    </form>
+
+    <!--<pre>{{shows | json }}</pre>-->
+    <div class="columns is-multiline">
+      <div class="column is-4" *ngFor="let show of shows">
+        <tm-poster [show]="show"></tm-poster>
+        <!-- <h2 class="subtitle">{{show.name}}</h2>
+      <img [src]="show.image.medium" alt=""> -->
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!--<div style="text-align:center">
+  <h4 (click)="clickHandler($event)">
+    Welcome to {{ title }}!
+    <tm-home owner="title" (timePass)="title = $event" ></tm-home>
+    <tm-home [owner]="title"></tm-home>
+    <tm-home owner="{{title}}"></tm-home>
+    <tm-home [owner]="'title'"></tm-home>
+  </h4>
+  </div>
+-->
+
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}" class="navbar-item is-tab">Home</a>
+        <a routerLink="/tv" routerLinkActive="is-active"  class="navbar-item is-tab">TV shows</a>
+        <a routerLink="/contact" routerLinkActive="is-active"  class="navbar-item is-tab">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
