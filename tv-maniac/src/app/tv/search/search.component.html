@@ -1,7 +1,10 @@
 <div class="columns">
   <div class="column is-3">
     <h2 clas="subtitle">Bookmarks</h2>
+    <div class="columns is-multiline">
+    <tm-poster *ngFor="let bookmark of bookmark" [show]="bookmark" class="column is-6"></tm-poster>
   </div>
+</div>
 
   <div class="column">
     <h2 clas="subtitle">Find shows</h2>
@@ -19,9 +22,11 @@
     <!--<pre>{{shows | json }}</pre>-->
     <div class="columns is-multiline">
       <div class="column is-4" *ngFor="let show of shows">
-        <tm-poster [show]="show"></tm-poster>
+        <tm-poster [show]="show" size="lg"></tm-poster>
         <!-- <h2 class="subtitle">{{show.name}}</h2>
       <img [src]="show.image.medium" alt=""> -->
+      <button class="button is-small is-primary" (click)="saveBookmark(show)"
+      [disabled]="isBookmarked(show)">Save</button>
       </div>
     </div>
   </div>

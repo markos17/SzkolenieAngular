@@ -16,23 +16,24 @@ query = 'flash';
 
 constructor(private tv: TvMazeService,
             private bs: BookmarksService) {
-  this.search('barman');
+  this.search('flash');
 }
+
 search(query: string) {
   this.tv.searchShow(query)
   .subscribe(shows => this.shows = shows);
 }
 
-saveBookmark(): void {
-
+saveBookmark(show: Show): void {
+  this.bs.add(show);
 }
 
-isBookmarked(): boolean {
-
+isBookmarked(show: Show): boolean {
+    return this.bs.has(show.id);
 }
 
-getBookmark(): Show[] {
-
+get bookmark(): Show[] {
+  return this.bs.getAll() as Show[];
 }
 
 /*
