@@ -3,18 +3,19 @@ import { Bookmark } from '../bookmarks.models';
 import { BookmarksService } from '../bookmarks.service';
 
 @Component({
-  selector: 'tm-bookmark-add',
-  templateUrl: './bookmark-add.component.html',
-  styleUrls: ['./bookmark-add.component.scss']
+  selector: 'tm-bookmark-remove',
+  templateUrl: './bookmark-remove.component.html',
+  styleUrls: ['./bookmark-remove.component.scss']
 })
-export class BookmarkAddComponent {
+export class BookmarkRemoveComponent  {
+
 @Input() item: Bookmark;
 // item: Bookmark;
 
   constructor(private bs: BookmarksService) { }
 
-  add(): void {
-    this.bs.add(this.item);
+  remove(): void {
+    this.bs.remove(this.item.id);
   }
 
   has(): boolean {
