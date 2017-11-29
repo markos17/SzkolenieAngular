@@ -15,6 +15,7 @@ show: ShowDetails;
 constructor(private route: ActivatedRoute) {
   // this.route.data.subscribe(({show}) => this.show = show);
   this.show = this.route.snapshot.data.show;
+  console.log(this.route.snapshot.data.roles);
 }
 
 /*

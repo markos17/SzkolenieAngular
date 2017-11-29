@@ -19,6 +19,9 @@ const routes: Routes = [
   {
     path: 'tv/:id',
     component: ShowDetailsComponent,
+    data: {
+    roles: ['admin', 'editor']
+    },
     resolve: {
       show: ShowDetailsResolver
     }
