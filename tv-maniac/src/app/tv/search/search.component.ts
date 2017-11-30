@@ -4,6 +4,8 @@ import { Show, ShowResponse } from '../tv.models';
 import 'rxjs/add/operator/map';
 import { TvMazeService } from '../tv-maze.service';
 import { BookmarksService } from '../../bookmarks/bookmarks.service';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'tm-search',
@@ -13,10 +15,27 @@ import { BookmarksService } from '../../bookmarks/bookmarks.service';
 export class SearchComponent {
 shows: Show[] = [];
 query = 'flash';
+searchForm: FormGroup;
 
 constructor(private tv: TvMazeService,
-            private bs: BookmarksService) {
-  this.search('flash');
+            private bs: BookmarksService,
+            private fb: FormBuilder) {
+  // this.search('flash');
+
+const queryControl = this.fb.control('flash');
+this.searchForm = this.fb.group({
+  query: queryControl
+});
+
+// na starcie przypisanie wartości
+// // this.search(queryControl.value);
+// // w f12 console pojawia się nowy wpis po kolejnej literce, jak ajax
+// this.searchForm.valueChanges.subscribe(c => console.log(c));
+
+this.search(this.searchForm.controls.query.value);
+this.searchForm.valueChanges.subscribe(c => console.log(c));
+
+
 }
 
 search(query: string) {

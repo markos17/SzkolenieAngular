@@ -8,14 +8,15 @@
 
   <div class="column">
     <h2 clas="subtitle">Find shows</h2>
-    <form class="field has-addons">
+    <form class="field has-addons" [formGroup]="searchForm">
       <div class="contol">
         <!-- <input #queryRef type="text" class="input"> -->
-        <input [(ngModel)]="query" name="query" type="search" class="input">
+        <!-- dodalismy formControlName oraz wyzej  formGroup, usunelismy ponizej  [(ngModel)]="query" -->
+        <input formControlName="query"  name="query" type="search" class="input">
       </div>
       <div class="control">
         <!-- <button class="button is-primary" (click)="search(queryRef.value)">Search</button> -->
-        <button class="button is-primary" (click)="search(query)">Search</button>
+        <button class="button is-primary" (click)="search(searchForm.controls.query.value)">Search</button>
       </div>
     </form>
 

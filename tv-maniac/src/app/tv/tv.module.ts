@@ -4,7 +4,7 @@ import { SearchComponent } from './search/search.component';
 import { HttpClientModule } from '@angular/common/http/';
 import { PosterComponent } from './poster/poster.component';
 import { TvMazeService } from './tv-maze.service';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BookmarksModule } from '../bookmarks/bookmarks.module';
 import { ShowDetailsComponent } from './show-details/show-details.component';
 import { RouterModule } from '@angular/router';
@@ -14,7 +14,7 @@ import { EpisodisePipe } from './episodise.pipe';
   imports: [
     CommonModule,
     HttpClientModule,
-    FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     BookmarksModule
   ],
