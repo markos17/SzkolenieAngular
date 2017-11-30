@@ -3,9 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Show, ShowResponse } from '../tv.models';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/filter';
 import { TvMazeService } from '../tv-maze.service';
 import { BookmarksService } from '../../bookmarks/bookmarks.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { query } from '@angular/core/src/animation/dsl';
 
 
 @Component({
@@ -25,7 +27,8 @@ constructor(private tv: TvMazeService,
 
 const queryControl = this.fb.control('flash');
 this.searchForm = this.fb.group({
-  query: queryControl
+  // query: queryControl
+  query: ['flash', Validators.required]
 });
 
 // na starcie przypisanie wartości
@@ -37,13 +40,16 @@ this.search(this.searchForm.controls.query.value);
 
 // dynamicznie wyszukuje przy zmianie tekstu
 this.searchForm.valueChanges
-.debounceTime(500)
-.subscribe(({query}) => this.search(query));
-
-
+.debounceTime(300)
+.map(({query}) => query)
+.filter(() => this.searchForm.valid)
+// .filter(query => !!query)
+// .subscribe(query => this.search(query));
+.subscribe(this.search);
 }
 
-search(query: string) {
+// search(query: string) {
+  search = (query: string) => {
   this.tv.searchShow(query)
   .subscribe(shows => this.shows = shows);
 }
