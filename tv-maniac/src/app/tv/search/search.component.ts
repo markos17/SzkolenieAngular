@@ -4,6 +4,7 @@ import { Show, ShowResponse } from '../tv.models';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/do';
 import { TvMazeService } from '../tv-maze.service';
 import { BookmarksService } from '../../bookmarks/bookmarks.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -42,6 +43,7 @@ this.search(this.searchForm.controls.query.value);
 this.searchForm.valueChanges
 .debounceTime(300)
 .map(({query}) => query)
+.do(() => {console.log(this.searchForm.controls.query.errors)})
 .filter(() => this.searchForm.valid)
 // .filter(query => !!query)
 // .subscribe(query => this.search(query));

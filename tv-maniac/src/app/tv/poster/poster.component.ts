@@ -13,7 +13,7 @@ import {get} from 'lodash';
 })
 export class PosterComponent implements OnChanges {
   @Input() show: Show;
-  @Input() size = 'lg';
+  @Input() size = 'md';
   posterUrl: string;
   private placeholder = 'http://www.placecage.com/c/200/300';
 
