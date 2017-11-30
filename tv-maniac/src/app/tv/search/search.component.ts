@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Show, ShowResponse } from '../tv.models';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/debounceTime';
 import { TvMazeService } from '../tv-maze.service';
 import { BookmarksService } from '../../bookmarks/bookmarks.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -33,7 +34,11 @@ this.searchForm = this.fb.group({
 // this.searchForm.valueChanges.subscribe(c => console.log(c));
 
 this.search(this.searchForm.controls.query.value);
-this.searchForm.valueChanges.subscribe(c => console.log(c));
+
+// dynamicznie wyszukuje przy zmianie tekstu
+this.searchForm.valueChanges
+.debounceTime(500)
+.subscribe(({query}) => this.search(query));
 
 
 }
