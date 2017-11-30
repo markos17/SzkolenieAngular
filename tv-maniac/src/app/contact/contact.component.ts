@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AbstractControl } from '@angular/forms/';
 
 @Component({
   selector: 'tm-contact',
@@ -10,6 +11,11 @@ contact = {
   email: '',
   message: ''
 };
+
+showErrors(fieldRef: AbstractControl): boolean {
+  return fieldRef.dirty && fieldRef.invalid;
+}
+
 
   constructor() { }
 

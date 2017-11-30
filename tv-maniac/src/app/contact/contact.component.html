@@ -5,7 +5,11 @@
     <label for="email" class="label">Email:</label>
     <div class="field">
       <div class="control">
-        <input required email minlength="3" #emailRef="ngModel" [(ngModel)]="contact.email" name="email" id="email" type="email" class="input is-danger">
+        <input required email minlength="3" #emailRef="ngModel"
+        [class.is-danger]="emailRef.dirty && emailRef.invalid"
+        [class.is-success]="emailRef.dirty && emailRef.valid"
+        [(ngModel)]="contact.email" name="email" id="email" type="email" class="input">
+        <!-- [class.is-danger]="{'is-danger': emailRef.dirty && emailRef.invalid}" -->
       </div>
     </div>
     <div class="help is-danger" *ngIf="emailRef.dirty && emailRef.invalid">
