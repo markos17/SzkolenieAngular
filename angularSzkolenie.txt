@@ -1,4 +1,5 @@
 https://bitbucket.org/tomsu/
+http://output.jsbin.com/zivugugume
 
 npm run backend
 npm start (ng start)
