@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'tv/:id',
     component: ShowDetailsComponent,
     data: {
-    roles: ['admin', 'editor']
+    roles: ['admin', 'editor', 'a']
     },
     resolve: {
       show: ShowDetailsResolver

@@ -11,10 +11,12 @@ import { ShowDetails } from '../tv.models';
 })
 export class ShowDetailsComponent implements OnInit {
 show: ShowDetails;
+episodeLength = 2;
 
 constructor(private route: ActivatedRoute) {
   // this.route.data.subscribe(({show}) => this.show = show);
   this.show = this.route.snapshot.data.show;
+  this.episodeLength = this.show._embedded.episodes.some(({number}) => number > 99) ? 3 : 2;
   console.log(this.route.snapshot.data.roles);
 }
 

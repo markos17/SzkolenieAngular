@@ -7,10 +7,10 @@ export class LoggedInGuard implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    const isLoggedIn = route.data.roles.includes(prompt('Which role do you have?'));
-    if (!isLoggedIn) {
-      this.router.navigateByUrl('/');
-    }
-    return isLoggedIn;
+    // const isLoggedIn = route.data.roles.includes(prompt('Which role do you have?'));
+    // if (!isLoggedIn) {
+    //   this.router.navigateByUrl('/');
+    // }
+    return true; //isLoggedIn;
   }
 }
