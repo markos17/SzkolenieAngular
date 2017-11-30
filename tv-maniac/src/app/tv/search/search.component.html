@@ -22,7 +22,9 @@
     <!--<pre>{{shows | json }}</pre>-->
     <div class="columns is-multiline">
       <div class="column is-4" *ngFor="let show of shows">
-        <tm-poster [show]="show" size="lg">
+          <!-- class="bookmarked" dodanie wstążki bookmarked na okladce -->
+          <!-- [class.bookmarked]="isBookmarked(show)" -->
+        <tm-poster [show]="show" size="lg" [tmIsBookmarked] = "show">
           <tm-bookmark-add [item]="show"></tm-bookmark-add>
           <tm-bookmark-remove [item]="show"></tm-bookmark-remove>
           <!-- przeniesienie przycisku do oddzielnych modeli

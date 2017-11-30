@@ -160,4 +160,4 @@ Guard -> ng g g guards/logged-in
 
 lint -> warningi	 
  /* eslint-dusable */ lub /* tslint:disable */
- 
+ roznica miedzy dyrektywami  i komponentami - TYLKO brak szablonu!! bardzo podobne (input, output)
